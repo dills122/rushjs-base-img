@@ -1,0 +1,22 @@
+name: Docker CD
+
+on:
+  push:
+    paths:
+      - "Dockerfile"
+jobs:
+  Build-and-Push-Docker-Image:
+    runs-on: ubuntu-latest
+    name: Docker Build, Tag, Push
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Build container image
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+          registry: docker.pkg.github.com
+          repository: dills122/rushjs-base-img
+          tag_with_sha: true

@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:14
-LABEL version="1.0.0"
-LABEL com.example.version="1.0.0"
+LABEL version="1.0.1"
+LABEL com.example.version="1.0.1"
 LABEL com.example.release-date="2021-10-02"
 LABEL author="Dylan Steele"
 LABEL org.opencontainers.image.authors="dylansteele57@gmail.com"

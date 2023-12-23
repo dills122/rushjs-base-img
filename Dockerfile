@@ -1,4 +1,4 @@
-FROM node:gallium-alpine
+FROM node:hydrogen-alpine
 LABEL version="1.1.0"
 LABEL com.example.version="1.1.0"
 LABEL com.example.release-date="2023-12-23"

@@ -1,3 +1,3 @@
 # Rush.js Base Docker Image
 
-A docker image that contains the `Rush.js` monorepo framework, along with `pm2`
+A base docker image I created to use with all of my monorepo projects.

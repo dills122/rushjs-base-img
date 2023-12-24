@@ -1,16 +1,8 @@
-name: ci
+name: quarterly-publish
 
 on:
-  push:
-    branches:
-      - "master"
-    paths-ignore:
-      - "**.md"
-  pull_request:
-    branches:
-      - "master"
-    paths-ignore:
-      - "**.md"
+  schedule:
+    - cron: "0 6 1 */3 *"
 
 env:
   DOCKERHUB_SLUG: dills122/rushjs-base-img
@@ -47,7 +39,6 @@ jobs:
           images: |
             ${{ env.DOCKERHUB_SLUG }}
             ${{ env.GHCR_SLUG }}
-          # generate Docker tags based on the following events/attributes
           tags: |
             type=edge,enable=true,priority=700,prefix=,suffix=,branch=$repo.default_branch
             type=ref,enable=true,priority=600,prefix=,suffix=,event=branch
